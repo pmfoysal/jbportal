@@ -18,8 +18,17 @@ exports.login = async data => {
    if (!bcrypt.compareSync(data?.password, user?.password)) throw new Error('Password is not matched');
 
    await modelsv1?.updateOne({ _id: user?._id }, { auth: { loggedIn: true, updatedAt: new Date().toISOString() } });
-   const temp = { name: user?.name, email: user?.email, phone: user?.phone, role: user?.role, status: user?.status };
+   const temp = {
+      _id: user?._id,
+      name: user?.name,
+      email: user?.email,
+      phone: user?.phone,
+      role: user?.role,
+      status: user?.status,
+   };
    return { token: jwt.sign(temp, process.env.JWT_SECRET, { expiresIn: '1d' }) };
 };
 
-exports.getCurrentUser = async () => {};
+exports.getCurrentUser = async id => {
+   return await modelsv1?.findById(id);
+};

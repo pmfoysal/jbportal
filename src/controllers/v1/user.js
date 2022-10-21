@@ -36,7 +36,7 @@ exports.login = async (req, res) => {
 
 exports.getCurrentUser = async (req, res) => {
    try {
-      const result = await Promise();
+      const result = await servicesv1?.getCurrentUser(req?.user?._id);
       res.status(200).send({
          status: 'Success',
          message: 'Performed the action!',
