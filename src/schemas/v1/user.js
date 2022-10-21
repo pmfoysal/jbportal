@@ -72,6 +72,10 @@ const userSchema = mongoose.Schema(
       },
       auth: {
          token: String,
+         loggedIn: {
+            type: Boolean,
+            default: false,
+         },
          createdAt: Date,
          updatedAt: Date,
       },
