@@ -1,4 +1,4 @@
-exports.getUser = async (req, res) => {
+exports.signup = async (req, res) => {
    try {
       const result = await Promise();
       res.status(200).send({
@@ -15,7 +15,7 @@ exports.getUser = async (req, res) => {
    }
 };
 
-exports.patchUser = async (req, res) => {
+exports.login = async (req, res) => {
    try {
       const result = await Promise();
       res.status(200).send({
@@ -32,41 +32,7 @@ exports.patchUser = async (req, res) => {
    }
 };
 
-exports.getAdmins = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
-};
-
-exports.getManagers = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
-};
-
-exports.getCandidates = async (req, res) => {
+exports.getCurrentUser = async (req, res) => {
    try {
       const result = await Promise();
       res.status(200).send({
