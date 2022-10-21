@@ -8,6 +8,7 @@ function from(location) {
 directory.addAliases({
    '@models': from('models'),
    '@routes': from('routes'),
+   '@schemas': from('schemas'),
    '@services': from('services'),
    '@databases': from('databases'),
    '@controllers': from('controllers'),

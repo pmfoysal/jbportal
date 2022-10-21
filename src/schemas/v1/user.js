@@ -60,7 +60,6 @@ const userSchema = mongoose.Schema(
             },
          ],
       },
-
       image: {
          type: String,
          validate: [valid.isURL, 'Please provide a valid image url'],
@@ -71,7 +70,6 @@ const userSchema = mongoose.Schema(
          enum: ['active', 'in-active'],
       },
       auth: {
-         token: String,
          loggedIn: {
             type: Boolean,
             default: false,

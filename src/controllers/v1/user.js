@@ -1,6 +1,8 @@
+const servicesv1 = require('@services').v1.user;
+
 exports.signup = async (req, res) => {
    try {
-      const result = await Promise();
+      const result = await servicesv1.signup(req.body);
       res.status(200).send({
          status: 'Success',
          message: 'Performed the action!',

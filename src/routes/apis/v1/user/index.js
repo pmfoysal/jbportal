@@ -1,7 +1,8 @@
 const user = require('express').Router();
+const controllerv1 = require('@controllers').v1.user;
 
-user.route('/me').get();
-user.route('/login').post();
-user.route('/signup').post();
+user.route('/login').post(controllerv1.login);
+user.route('/signup').post(controllerv1.signup);
+user.route('/me').get(controllerv1.getCurrentUser);
 
 module.exports = user;
