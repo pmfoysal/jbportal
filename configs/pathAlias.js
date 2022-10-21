@@ -2,7 +2,7 @@ const path = require('path');
 const directory = require('module-alias');
 
 function from(location) {
-   return path.resolve(__dirname, '../../src', `./${location}`);
+   return path.resolve(__dirname, '../src', `./${location}`);
 }
 
 directory.addAliases({

@@ -1,9 +1,9 @@
 require('colors');
 require('dotenv').config();
 const cors = require('cors');
+require('./configs/pathAlias')();
+const routes = require('@routes');
 const express = require('express');
-require('./src/configs/pathAlias')();
-const routes = require('./src/routes');
 const databases = require('@databases');
 
 const app = express();
