@@ -1,0 +1,9 @@
+{
+   "status": "Success",
+   "message": "Performed the action!",
+   "data": {
+      "totalItems": 0,
+      "totalPages": 0,
+      "data": []
+   }
+}
