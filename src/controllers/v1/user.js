@@ -19,7 +19,7 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
    try {
-      const result = await Promise();
+      const result = await servicesv1?.login(req.body);
       res.status(200).send({
          status: 'Success',
          message: 'Performed the action!',

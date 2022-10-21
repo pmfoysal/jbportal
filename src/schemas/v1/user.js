@@ -74,7 +74,6 @@ const userSchema = mongoose.Schema(
             type: Boolean,
             default: false,
          },
-         createdAt: Date,
          updatedAt: Date,
       },
    },
