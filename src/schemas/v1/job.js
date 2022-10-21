@@ -42,6 +42,11 @@ const jobSchema = mongoose.Schema(
          ref: 'company',
          required: true,
       },
+      employer: {
+         type: ObjectId,
+         ref: 'user',
+         required: true,
+      },
       applications: [
          {
             type: ObjectId,

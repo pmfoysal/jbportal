@@ -1,6 +1,6 @@
-module.exports = id => {
+module.exports = withs => {
    return async (req, res, nex) => {
-      if (id !== req?.user?._id) {
+      if (req?.params?.id !== req?.user?._id || !withs?.includes(req?.user?.role)) {
          res.status(403).send({
             status: 'Failed',
             message: 'Something went wrong!',

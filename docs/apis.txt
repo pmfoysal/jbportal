@@ -13,7 +13,7 @@ GET /api/v1/users/manager -> [Admin]
 GET /api/v1/users/candidate -> [Admin]
 ======================================================
 POST /api/v1/jobs -> [Manager]
-PATCH /api/v1/jobs/:id -> [Current][Manager]
+PATCH /api/v1/jobs/:id -> [Posted][Manager]
 GET /api/v1/jobs -> [All]
 GET /api/v1/jobs/:id -> [All]
 POST /api/v1/jobs/:id/apply -> [Candidate]
