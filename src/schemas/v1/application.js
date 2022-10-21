@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const valid = require('validator').default;
 const { ObjectId } = mongoose.Schema.Types;
 
 const applicationSchema = mongoose.Schema(
@@ -8,6 +9,11 @@ const applicationSchema = mongoose.Schema(
          ref: 'job',
          required: true,
       },
+      company: {
+         type: ObjectId,
+         ref: 'company',
+         required: true,
+      },
       applicant: {
          type: ObjectId,
          ref: 'user',
@@ -15,7 +21,7 @@ const applicationSchema = mongoose.Schema(
       },
       resume: {
          type: String,
-         required: [true, 'Please provide a resume for this application'],
+         required: [valid.isURL, 'Please provide a valid resume link for this application'],
       },
    },
    {

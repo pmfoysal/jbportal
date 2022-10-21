@@ -1,4 +1,3 @@
-const valid = require('validator');
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
 
@@ -39,17 +38,14 @@ const jobSchema = mongoose.Schema(
          },
       },
       company: {
-         type: String,
-         required: [true, 'Please provide a company name for this job'],
-         trim: true,
-         lowercase: true,
-         minLength: [3, 'Position name must be at least 3 characters long'],
-         maxLenght: [100, 'Position name must be maximum 100 characters long'],
+         type: ObjectId,
+         ref: 'company',
+         required: true,
       },
       applications: [
          {
             type: ObjectId,
-            ref: 'Application',
+            ref: 'application',
          },
       ],
       deadline: {
