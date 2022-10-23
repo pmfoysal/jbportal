@@ -1,52 +1,14 @@
-const servicesv1 = require('@services').v1.user;
+const { sendRes } = require('@utilities');
+const user = require('@services').v1.user;
 
 exports.signup = async (req, res) => {
-   try {
-      const result = await servicesv1.signup(req.body);
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => user.signup(req.body));
 };
 
 exports.login = async (req, res) => {
-   try {
-      const result = await servicesv1?.login(req.body);
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => user.login(req.body));
 };
 
 exports.getCurrentUser = async (req, res) => {
-   try {
-      const result = await servicesv1?.getCurrentUser(req?.user?._id);
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => user.getCurrentUser(req.user._id, req.query));
 };

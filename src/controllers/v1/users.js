@@ -1,84 +1,26 @@
+const { sendRes } = require('@utilities');
+const users = require('@services').v1.users;
+
+exports.getUsers = async (req, res) => {
+   sendRes(res, () => users.getUsers(req.query));
+};
+
 exports.getUser = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => users.getUser(req.params.id, req.query));
 };
 
 exports.patchUser = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => users.patchUser(req.params.id, req.body));
 };
 
 exports.getAdmins = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => users.getAdmins(req.query));
 };
 
 exports.getManagers = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => users.getManagers(req.query));
 };
 
 exports.getCandidates = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => users.getCandidates(req.query));
 };

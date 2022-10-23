@@ -6,17 +6,17 @@ const applicationSchema = mongoose.Schema(
    {
       job: {
          type: ObjectId,
-         ref: 'job',
+         ref: 'jobs',
          required: true,
       },
       company: {
          type: ObjectId,
-         ref: 'company',
+         ref: 'companies',
          required: true,
       },
       applicant: {
          type: ObjectId,
-         ref: 'user',
+         ref: 'users',
          required: true,
       },
       resume: {

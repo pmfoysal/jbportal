@@ -56,7 +56,7 @@ const userSchema = mongoose.Schema(
          applied: [
             {
                type: ObjectId,
-               ref: 'application',
+               ref: 'applications',
             },
          ],
       },
@@ -83,7 +83,7 @@ const userSchema = mongoose.Schema(
 );
 
 userSchema.pre('save', function (next) {
-   if (!this.isModified('password')) return next();
+   if (!this.password) return next();
    const pass = this.password;
    const hashed = bcrypt.hashSync(pass);
    this.password = hashed;
