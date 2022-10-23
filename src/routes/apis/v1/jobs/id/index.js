@@ -1,5 +1,5 @@
 const auth = require('@middlewares');
-const id = require('express').Router();
+const id = require('express').Router({ mergeParams: true });
 const controllersv1 = require('@controllers').v1.jobs;
 
 id.route('/')

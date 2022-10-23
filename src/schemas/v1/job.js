@@ -40,7 +40,7 @@ const jobSchema = mongoose.Schema(
       company: {
          type: ObjectId,
          ref: 'companies',
-         required: true,
+         // required: true,
       },
       employer: {
          type: ObjectId,
