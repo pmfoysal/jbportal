@@ -17,23 +17,22 @@
 **Projections:** no need
 
 ## Payload Data
-```javascript
+```json
 {
-    name: "Conrado Woltman",
-    email: "cwoltman0@dmoz.org",
-    phone: "+8801829656916",
-    password: "VL93lf&&"
+    "name": "Conrado Woltman",
+    "email": "cwoltman0@dmoz.org",
+    "phone": "+8801829656916",
+    "password": "VL93lf&&"
 }
 ```
 
-## Response Data
+## Success Response
 
-- ### Success
-```javascript
+```json
 {
-    status: "Success",
-    message: "Performed the action!",
-    data: {
+    "status": "Success",
+    "message": "Performed the action!",
+    "data": {
         "name": "Conrado Woltman",
         "email": "cwoltman0@dmoz.org",
         "phone": "+8801829656916",
@@ -51,5 +50,15 @@
         "updatedAt": "2022-10-28T17:17:15.915Z",
         "__v": 0
     }
+}
+```
+
+## Failed Response
+
+```json
+{
+    "status": "Failed",
+    "message": "Something went wrong!",
+    "error": "users validation failed: password: Provided password is not strong enough"
 }
 ```
