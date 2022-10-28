@@ -1,3 +1,3 @@
-# Job Portal Management Application
+# JBPortal - Job Listing Management Tool
 
-NodeJS &amp; MongoDB Advanced Crash Course - Assignment 03! Live: https://node-mongo-as03.onrender.com
+A Modern Job Listing Website Backend Services! Live: https://pms-jbportal.onrender.com
