@@ -6,6 +6,7 @@ POST /api/v1/user/signup -> [All]
 POST /api/v1/user/login -> [All]
 GET /api/v1/user/me -> [Current]
 ======================================================
+GET /api/v1/users -> [Admin]
 GET /api/v1/users/:id -> [Admin]
 PATCH /api/v1/users/:id -> [Current]/[Admin]
 GET /api/v1/users/admin -> [Admin]
@@ -30,6 +31,7 @@ GET /api/v1/jobs/most-applieds -> [All]
 ======================================================
 
 GET /api/v1/user/me -> [Current]
+GET /api/v1/users -> [Admin]
 GET /api/v1/users/:id -> [Admin]
 GET /api/v1/users/admin -> [Admin]
 GET /api/v1/users/manager -> [Admin]

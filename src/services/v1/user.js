@@ -29,6 +29,9 @@ exports.login = async data => {
    return { token: jwt.sign(temp, process.env.JWT_SECRET, { expiresIn: '1d' }) };
 };
 
-exports.getCurrentUser = async id => {
-   return await modelsv1?.findById(id);
+exports.getCurrentUser = async (id, query) => {
+   const fields = query?.fields?.replaceAll(/[, ]/g, ' ');
+   const result = await modelsv1?.findById(id)?.select(fields);
+   if (!result) throw new Error('No user found with this auth token');
+   return result;
 };

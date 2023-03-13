@@ -38,7 +38,7 @@ const companySchema = mongoose.Schema(
       employees: [
          {
             type: ObjectId,
-            ref: 'user',
+            ref: 'users',
          },
       ],
    },

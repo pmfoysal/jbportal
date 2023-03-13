@@ -39,18 +39,18 @@ const jobSchema = mongoose.Schema(
       },
       company: {
          type: ObjectId,
-         ref: 'company',
-         required: true,
+         ref: 'companies',
+         // required: true,
       },
       employer: {
          type: ObjectId,
-         ref: 'user',
+         ref: 'users',
          required: true,
       },
       applications: [
          {
             type: ObjectId,
-            ref: 'application',
+            ref: 'applications',
          },
       ],
       deadline: {

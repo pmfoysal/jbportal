@@ -1,0 +1,9 @@
+{
+   "title": "job title 01",
+   "description": "Curabitur bibendum sagittis facilisis. Sed eget malesuada augue, id varius lectus. Aenean congue orci vel diam dapibus, sed rutrum magna posuere. Aenean eu lectus ac massa sodales elementum quis nec metus",
+   "position": "backend developer",
+   "salary": 40000,
+   "nature": "remote",
+   "company": "ami",
+   "deadline": "2022-11-10T00:00:00.000Z"
+}

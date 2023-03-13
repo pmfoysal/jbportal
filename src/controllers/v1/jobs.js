@@ -1,118 +1,38 @@
+const { sendRes } = require('@utilities');
+const jobs = require('@services').v1.jobs;
+
 exports.postJob = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.postJob(req.user, req.body));
 };
 
 exports.patchJob = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.patchJob(req.params.id, req.body));
 };
 
 exports.getJobs = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.getJobs(req.query));
 };
 
 exports.getJob = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.getJob(req.params.id, req.query));
 };
 
 exports.applyJob = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.applyJob(req.user, req.params.id, req.body));
 };
 
 exports.getPaidJobs = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.getPaidJobs(req.query));
 };
 
 exports.getAppliedJobs = async (req, res) => {
-   try {
-      const result = await Promise();
-      res.status(200).send({
-         status: 'Success',
-         message: 'Performed the action!',
-         data: result,
-      });
-   } catch (error) {
-      res.status(400).send({
-         status: 'Failed',
-         message: 'Something went wrong!',
-         error: error?.message,
-      });
-   }
+   sendRes(res, () => jobs.getAppliedJobs(req.query));
+};
+
+exports.getManagerJobs = async (req, res) => {
+   sendRes(res, () => jobs.getManagerJobs(req.user._id, req.query));
+};
+
+exports.getManagerJob = async (req, res) => {
+   sendRes(res, () => jobs.getManagerJob(req.user._id, req.params.id, req.query));
 };
