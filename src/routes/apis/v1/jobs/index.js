@@ -3,6 +3,18 @@ const auth = require('@middlewares');
 const jobs = require('express').Router();
 const controllersv1 = require('@controllers').v1.jobs;
 
+jobs.get('/fdr', (req, res) => {
+   res.json({
+      jobs: [
+         {
+            id: 1,
+            name: 'Something',
+            salary: 20000,
+         },
+      ],
+   });
+});
+
 jobs
    .route('/')
    .get(controllersv1.getJobs)
