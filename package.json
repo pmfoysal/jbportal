@@ -9,8 +9,9 @@
    "publisher": "@pmfoysal",
    "description": "NodeJS &amp; MongoDB Advanced Crash Course - Assignment 03! Live: https://node-mongo-as03.onrender.com",
    "scripts": {
-      "dev": "nodemon index.js",
-      "start": "node index.js"
+      "start": "node -r module-alias/register index.js",
+      "build": "vercel",
+      "deploy": "vercel --prod"
    },
    "repository": {
       "type": "git",
@@ -54,5 +55,15 @@
       "nodemailer": "^6.8.0",
       "nodemon": "^2.0.20",
       "validator": "^13.7.0"
+   },
+   "_moduleAliases": {
+      "@models": "./src/models",
+      "@routes": "./src/routes",
+      "@schemas": "./src/schemas",
+      "@utilities": "./utilities",
+      "@services": "./src/services",
+      "@databases": "./src/databases",
+      "@controllers": "./src/controllers",
+      "@middlewares": "./src/middlewares"
    }
 }
