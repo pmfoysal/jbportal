@@ -9,7 +9,7 @@
    "publisher": "@pmfoysal",
    "description": "NodeJS &amp; MongoDB Advanced Crash Course - Assignment 03! Live: https://node-mongo-as03.onrender.com",
    "scripts": {
-      "start": "node -r module-alias/register index.js",
+      "start": "node index.js",
       "build": "vercel",
       "deploy": "vercel --prod"
    },

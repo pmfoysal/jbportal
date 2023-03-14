@@ -13,6 +13,18 @@ app.use(express.json());
 app.use(cors({ origin: '*' }));
 app.use('/', routes(port));
 
+app.get('/jobs', (req, res) => {
+   res.json({
+      jobs: [
+         {
+            id: 1,
+            name: 'Something',
+            salary: 20000,
+         },
+      ],
+   });
+});
+
 app.listen(port, () => {
    console.log(`App is running on port: ${port}`.blue.bold);
    databases.v1.mongoDB();
