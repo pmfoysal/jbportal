@@ -18,20 +18,17 @@ exports.patchJob = async (id, data) => {
 };
 
 exports.getJobs = async query => {
-   // const temps = {
-   //    page: Number(query?.page) - 1,
-   //    limit: Number(query?.limit),
-   //    fields: query?.fields?.replaceAll(/[, ]/g, ' '),
-   // };
-   // const result = await jobs?.find(query?.filter).sort(query?.sort).select(temps.fields).select('-applications -__v');
-   // if (!result?.length) throw new Error('No jobs found with these queries');
-   // return {
-   //    totalItems: result?.length,
-   //    totalPages: Math.ceil(result?.length / (temps?.limit || result?.length)),
-   //    data: result,
-   // };
+   const temps = {
+      page: Number(query?.page) - 1,
+      limit: Number(query?.limit),
+      fields: query?.fields?.replaceAll(/[, ]/g, ' '),
+   };
+   const result = await jobs?.find(query?.filter).sort(query?.sort).select(temps.fields).select('-applications -__v');
+   if (!result?.length) throw new Error('No jobs found with these queries');
    return {
-      message: "It's working",
+      totalItems: result?.length,
+      totalPages: Math.ceil(result?.length / (temps?.limit || result?.length)),
+      data: result,
    };
 };
 
