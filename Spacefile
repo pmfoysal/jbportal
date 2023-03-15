@@ -1,6 +1,0 @@
-v: 0
-micros:
-   - name: jbportal
-     src: .
-     engine: nodejs16
-     primary: true
