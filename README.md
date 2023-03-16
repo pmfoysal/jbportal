@@ -1,3 +1,3 @@
 # Job Portal Management Application
 
-NodeJS &amp; MongoDB Advanced Crash Course - Assignment 03! Live: https://node-mongo-as03.onrender.com
+By using MVC Architecture with Node.js, Express.js, MongoDB & JWT! Live: https://jbportal-1-i9105411.deta.app
